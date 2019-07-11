@@ -1,0 +1,89 @@
+{
+  "name": "kebernetes",
+  "type": "executer",
+  "imgUrl": "kubernetes.png",
+  "execProgram": "node",
+  "main": "app.js",
+  "version": "1.0.0",
+  "description": "",
+  "settings":[
+    {
+      "name": "SUDO",
+      "viewName": "sudo",
+      "type": "boolean"
+    } 
+  ],
+  "methods": [
+    {
+      "name": "exposeDeployment",
+      "viewName": "expose deployment",
+      "params": [
+        {
+          "name": "DEPLOYMENT",
+          "viewName": "deployment",
+          "type": "string",
+          "required":true
+        },
+        {
+          "name": "TYPE",
+          "viewName": "type",
+          "type": "string"
+        },
+        {
+          "name": "NAME",
+          "viewName": "name",
+          "type": "string",
+          "required":true
+        },        
+        {
+          "name": "SUDO",
+          "viewName": "sudo",
+          "type": "boolean"
+        }        
+      ]
+    },
+    {
+      "name": "getPods",
+      "viewName": "get pods",
+      "params": [ 
+        {
+          "name": "SUDO",
+          "viewName": "sudo",
+          "type": "boolean"
+        }  
+      ]
+    },
+    {
+      "name": "apply",
+      "viewName": "apply",
+      "params": [
+        {
+          "name": "FILE_PATH",
+          "viewName": "file path",
+          "type": "string",
+		      "required":true
+        },
+        {
+          "name": "FORCE",
+          "viewName": "force",
+          "type": "boolean"
+        },
+        {
+          "name": "OVERWRITE",
+          "viewName": "overwrite",
+          "type": "boolean"
+        },
+        {
+          "name": "DRY_RUN",
+          "viewName": "dry-run",
+          "type": "boolean"
+        },
+        {
+          "name": "SUDO",
+          "viewName": "sudo",
+          "type": "boolean"
+        }  
+      ]
+    }
+  ]
+}
