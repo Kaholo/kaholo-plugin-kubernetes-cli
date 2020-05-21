@@ -4,7 +4,7 @@
   "imgUrl": "kubernetes.png",
   "execProgram": "node",
   "main": "app.js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "settings":[
     {
@@ -16,7 +16,7 @@
   "methods": [
     {
       "name": "exposeDeployment",
-      "viewName": "expose deployment",
+      "viewName": "Expose Deployment",
       "params": [
         {
           "name": "DEPLOYMENT",
@@ -44,12 +44,28 @@
     },
     {
       "name": "getPods",
-      "viewName": "get pods",
+      "viewName": "Get Pods",
       "params": [ 
         {
           "name": "SUDO",
           "viewName": "sudo",
           "type": "boolean"
+        }  
+      ]
+    },
+    {
+      "name": "getServices",
+      "viewName": "Get Services",
+      "params": [ 
+        {
+          "name": "SUDO",
+          "viewName": "sudo",
+          "type": "boolean"
+        },
+        {
+          "name": "namespace",
+          "viewName": "Namespace",
+          "type": "string"
         }  
       ]
     },

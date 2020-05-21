@@ -7,12 +7,22 @@ function _getsudo(params,settings){
   return ((os.platform() == 'linux') && (params.SUDO || settings.SUDO )) ? 'sudo' :''
 }
 
-async function  exposeDeployment(action,settings) {
+async function exposeDeployment(action,settings) {
   let params = action.params;
-  let SUDO =  _getsudo(params,settings)
   let type = params.TYPE || 'NodePort'
-  let execString = `${SUDO} kubectl expose deployment ${params.DEPLOYMENT} --type=${type} --name=${params.NAME}`
-   return  exec(execString);
+  let execString = `${_getsudo(params,settings)} kubectl expose deployment ${params.DEPLOYMENT} --type=${type} --name=${params.NAME}`
+  return exec(execString);
+}
+
+async function getServices(action,settings) {
+  let params = action.params;
+  let execString = `${_getsudo(params,settings)} kubectl get svc -n ${action.params.namespace} -o json`
+  const execResult = await exec(execString);
+  try{
+    return JSON.parse(execResult.stdout);
+  } catch (err){
+    throw `Could not parse "get svc" output`;
+  }
 }
 
 async function getPods(action,settings){
@@ -54,6 +64,7 @@ async function apply(action,settings){
 module.exports = {
   exposeDeployment: exposeDeployment,
   getPods: getPods,
-  apply: apply 
+  apply: apply,
+  getServices: getServices
 };
 
