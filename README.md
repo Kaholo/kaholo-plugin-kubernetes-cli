@@ -1,5 +1,5 @@
-# kaholo-plugin-kubernetes
-Kubernetes plugin for Kaholo it implements some kubectl commands
+# kaholo-plugin-kubernetes-cli
+kubectl plugin for Kaholo.
 
 ## Method Expose Deployment
 Executes kubectl expose deployment command.

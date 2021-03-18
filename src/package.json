@@ -1,6 +1,6 @@
 {
-  "name": "kaholo-plugin-kubernetese",
-  "version": "1.0.0",
+  "name": "kaholo-plugin-kubernetese-cli",
+  "version": "1.1.1",
   "description": "",
   "main": "app.js",
   "scripts": {
