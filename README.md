@@ -29,6 +29,6 @@ Run Kubectl apply, which creates or updates resources in Kubernetes.
 ### Parameters
 1. File Path (String) **Required** - The path to the yml file to apply.
 2. Force (Boolean) **Optional** - If true, immediately remove resources from API and bypass graceful deletion. Default value is false.
-3. Overwrite (Boolean) **Optional** - Automatically resolve conflicts between the modified and live configuration by using values from the modified configuration.
+3. No Overwrite (Boolean) **Optional** - If specified, **Don't** automatically resolve conflicts between the modified and live configuration by using values from the modified configuration.
 4. Dry-run (Options) **Optional** - 	Possible values are "none", "server", or "client". If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource. Default Value is 'none'.
 5. Sudo (Boolean) **Optional** - if selected the command will be executed as super user. default value is false.
