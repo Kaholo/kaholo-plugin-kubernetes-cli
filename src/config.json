@@ -4,12 +4,12 @@
   "imgUrl": "kubernetes.png",
   "execProgram": "node",
   "main": "app.js",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "",
   "settings":[
     {
       "name": "SUDO",
-      "viewName": "sudo",
+      "viewName": "Sudo",
       "type": "boolean"
     } 
   ],
@@ -20,24 +20,24 @@
       "params": [
         {
           "name": "DEPLOYMENT",
-          "viewName": "deployment",
+          "viewName": "Deployment",
           "type": "string",
           "required":true
         },
         {
           "name": "TYPE",
-          "viewName": "type",
+          "viewName": "Type",
           "type": "string"
         },
         {
           "name": "NAME",
-          "viewName": "name",
+          "viewName": "Name",
           "type": "string",
           "required":true
         },        
         {
           "name": "SUDO",
-          "viewName": "sudo",
+          "viewName": "Sudo",
           "type": "boolean"
         }        
       ]
@@ -48,7 +48,7 @@
       "params": [ 
         {
           "name": "SUDO",
-          "viewName": "sudo",
+          "viewName": "Sudo",
           "type": "boolean"
         }  
       ]
@@ -59,7 +59,7 @@
       "params": [ 
         {
           "name": "SUDO",
-          "viewName": "sudo",
+          "viewName": "Sudo",
           "type": "boolean"
         },
         {
@@ -71,32 +71,46 @@
     },
     {
       "name": "apply",
-      "viewName": "apply",
+      "viewName": "Apply",
       "params": [
         {
           "name": "FILE_PATH",
-          "viewName": "file path",
+          "viewName": "File Path",
           "type": "string",
 		      "required":true
         },
         {
           "name": "FORCE",
-          "viewName": "force",
+          "viewName": "Force",
           "type": "boolean"
         },
         {
-          "name": "OVERWRITE",
-          "viewName": "overwrite",
+          "name": "NO_OVERWRITE",
+          "viewName": "Don't Overwrite",
           "type": "boolean"
         },
         {
           "name": "DRY_RUN",
-          "viewName": "dry-run",
-          "type": "boolean"
+          "viewName": "Dry-run",
+          "type": "options",
+          "options": [
+            {
+            "id": "none",
+            "name": "none"
+            },
+            {
+              "id": "server",
+              "name": "server"
+            },
+            {
+              "id": "client",
+              "name": "client"
+            }
+          ]
         },
         {
           "name": "SUDO",
-          "viewName": "sudo",
+          "viewName": "Sudo",
           "type": "boolean"
         }  
       ]
