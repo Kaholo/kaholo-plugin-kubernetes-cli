@@ -4,14 +4,14 @@
   "imgUrl": "kubernetes.png",
   "execProgram": "node",
   "main": "app.js",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "description": "",
-  "settings":[
+  "settings": [
     {
       "name": "SUDO",
       "viewName": "Sudo",
       "type": "boolean"
-    } 
+    }
   ],
   "methods": [
     {
@@ -22,7 +22,7 @@
           "name": "DEPLOYMENT",
           "viewName": "Deployment",
           "type": "string",
-          "required":true
+          "required": true
         },
         {
           "name": "TYPE",
@@ -33,30 +33,30 @@
           "name": "NAME",
           "viewName": "Name",
           "type": "string",
-          "required":true
-        },        
+          "required": true
+        },
         {
           "name": "SUDO",
           "viewName": "Sudo",
           "type": "boolean"
-        }        
+        }
       ]
     },
     {
       "name": "getPods",
       "viewName": "Get Pods",
-      "params": [ 
+      "params": [
         {
           "name": "SUDO",
           "viewName": "Sudo",
           "type": "boolean"
-        }  
+        }
       ]
     },
     {
       "name": "getServices",
       "viewName": "Get Services",
-      "params": [ 
+      "params": [
         {
           "name": "SUDO",
           "viewName": "Sudo",
@@ -66,7 +66,7 @@
           "name": "namespace",
           "viewName": "Namespace",
           "type": "string"
-        }  
+        }
       ]
     },
     {
@@ -77,7 +77,7 @@
           "name": "FILE_PATH",
           "viewName": "File Path",
           "type": "string",
-		      "required":true
+          "required": true
         },
         {
           "name": "FORCE",
@@ -95,8 +95,8 @@
           "type": "options",
           "options": [
             {
-            "id": "none",
-            "name": "none"
+              "id": "none",
+              "name": "none"
             },
             {
               "id": "server",
@@ -112,8 +112,12 @@
           "name": "SUDO",
           "viewName": "Sudo",
           "type": "boolean"
-        }  
+        }
       ]
     }
+  ],
+  "category": [
+    "CLOUD",
+    "CONTAINERS"
   ]
 }

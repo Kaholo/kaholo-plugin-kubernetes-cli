@@ -1,0 +1,155 @@
+{
+  "name": "kebernetes cli",
+  "type": "executer",
+  "imgUrl": "kubernetes.png",
+  "execProgram": "node",
+  "main": "app.js",
+  "version": "1.1.2",
+  "description": "",
+  "settings": [
+    {
+      "name": "SUDO",
+      "viewName": "Sudo",
+      "type": "boolean"
+    }
+  ],
+  "methods": [
+    {
+      "name": "exposeDeployment",
+      "viewName": "Expose Deployment",
+      "params": [
+        {
+          "name": "DEPLOYMENT",
+          "viewName": "Deployment",
+          "type": "string",
+          "required": true,
+          "description": "A Deployment runs multiple replicas of your application and automatically replaces any instances that fail or become unresponsive. In this way, Deployments help ensure that one or more instances of your application are available to serve user requests. Deployments are managed by the Kubernetes Deployment controller.",
+          "placeholder": "deployment_name",
+          "learnUrl": "https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-app/deploy-intro/"
+        },
+        {
+          "name": "TYPE",
+          "viewName": "Type",
+          "type": "string",
+          "description": "Kubernetes objects are entities that are used to represent the state of the cluster. An object is a “record of intent” – once created, the cluster does its best to ensure it exists as defined. This is known as the cluster's “desired state.”.",
+          "placeholder": "Pods | Namespaces | services | etc.",
+          "learnUrl": "https://kubernetes.io/docs/concepts/overview/working-with-objects/"
+        },
+        {
+          "name": "NAME",
+          "viewName": "Name",
+          "type": "string",
+          "required": true,
+          "description": "A Kubernetes service is a logical abstraction for a deployed group of pods in a cluster (which all perform the same function). Since pods are ephemeral, a service enables a group of pods, which provide specific functions (web services, image processing, etc.) to be assigned a name and unique IP address (clusterIP).",
+          "placeholder": "mydeployment.",
+          "learnUrl": "https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands"
+        },
+        {
+          "name": "SUDO",
+          "viewName": "Sudo",
+          "type": "boolean",
+          "description": "The sudo command allows you to run programs with the security privileges of another user (by default, as the superuser). It prompts you for your personal password and confirms your request to execute a command by checking a file, called sudoers , which the system administrator configures.",
+          "placeholder": "Disable / Enable.",
+          "learnUrl": "https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/"
+        }
+      ]
+    },
+    {
+      "name": "getPods",
+      "viewName": "Get Pods",
+      "params": [
+        {
+          "name": "SUDO",
+          "viewName": "Sudo",
+          "type": "boolean",
+          "description": "The sudo command allows you to run programs with the security privileges of another user (by default, as the superuser). It prompts you for your personal password and confirms your request to execute a command by checking a file, called sudoers , which the system administrator configures.",
+          "placeholder": "Disable / Enable.",
+          "learnUrl": "https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/"
+        }
+      ]
+    },
+    {
+      "name": "getServices",
+      "viewName": "Get Services",
+      "params": [
+        {
+          "name": "SUDO",
+          "viewName": "Sudo",
+          "type": "boolean",
+          "description": "The sudo command allows you to run programs with the security privileges of another user (by default, as the superuser). It prompts you for your personal password and confirms your request to execute a command by checking a file, called sudoers , which the system administrator configures.",
+          "placeholder": "Disable / Enable.",
+          "learnUrl": "https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/"
+        },
+        {
+          "name": "namespace",
+          "viewName": "Namespace",
+          "type": "string",
+          "description": "Namespaces are a way to organize clusters into virtual sub-clusters — they can be helpful when different teams or projects share a Kubernetes cluster. Any number of namespaces are supported within a cluster, each logically separated from others but with the ability to communicate with each other.",
+          "placeholder": "namespace",
+          "learnUrl": "https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/"
+        }
+      ]
+    },
+    {
+      "name": "apply",
+      "viewName": "Apply",
+      "params": [
+        {
+          "name": "FILE_PATH",
+          "viewName": "File Path",
+          "type": "string",
+          "required": true,
+          "description": "The path to the yml file to apply.",
+          "placeholder": "/path/to/file",
+          "learnUrl": "https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/"
+        },
+        {
+          "name": "FORCE",
+          "viewName": "Force",
+          "type": "boolean",
+          "description": "If true, immediately remove resources from API and bypass graceful deletion. Default value is false.",
+          "placeholder": "Disable / Enable",
+          "learnUrl": "https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/"
+        },
+        {
+          "name": "NO_OVERWRITE",
+          "viewName": "Don't Overwrite",
+          "type": "boolean",
+          "description": "Do not automatically resolve conflicts between the modified and live configuration by using values from the modified configuration.",
+          "placeholder": "Disable / Enabled",
+          "learnUrl": "https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands"
+        },
+        {
+          "name": "DRY_RUN",
+          "viewName": "Dry-run",
+          "type": "options",
+          "options": [
+            {
+              "id": "none",
+              "name": "none"
+            },
+            {
+              "id": "server",
+              "name": "server"
+            },
+            {
+              "id": "client",
+              "name": "client"
+            }
+          ],
+          "description": "Dry run is not a concept exclusive to Kubernetes. It's an expression used to indicate a rehearsal of a performance or procedure before the real one. Dry run mode gives you the possibility of issuing a command without side effects for testing an actual command that you intend to run.",
+          "placeholder": "Disable / Enabled",
+          "learnUrl": "https://kubernetes.io/blog/2019/01/14/apiserver-dry-run-and-kubectl-diff/"
+        },
+        {
+          "name": "SUDO",
+          "viewName": "Sudo",
+          "type": "boolean",
+          "description": "The sudo command allows you to run programs with the security privileges of another user (by default, as the superuser). It prompts you for your personal password and confirms your request to execute a command by checking a file, called sudoers , which the system administrator configures.",
+          "placeholder": "Disable / Enable.",
+          "learnUrl": "https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/"
+        }
+      ]
+    }
+  ]
+}
